@@ -4,7 +4,7 @@ FROM $OPM_IMAGE
 ARG COMMIT
 ARG INDEX_FILE=./auto-generated/released.yaml
 #This files will be copied twice but it is not possible to COPY if not empty
-COPY $INDEX_FILE /configs/netobserv-operator.yaml
+COPY $INDEX_FILE /configs/netobserv-operator/index.yaml
 RUN ls -R /configs
 
 # Configure the entrypoint and command
