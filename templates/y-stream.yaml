@@ -40,7 +40,7 @@ entries:
         replaces: network-observability-operator.v1.8.0
   - schema: olm.channel
     package: netobserv-operator
-    name: 1.0.x
+    name: v1.0.x
     entries:
       - name: network-observability-operator.v1.0.0-202301070345
       - name: network-observability-operator.v1.1.0-202302110050
