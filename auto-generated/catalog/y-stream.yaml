@@ -14,18 +14,6 @@ entries:
   replaces: network-observability-operator.v1.1.0-202302110050
 - name: network-observability-operator.v1.3.0
   replaces: network-observability-operator.v1.2.0
-name: 1.0.x
-package: netobserv-operator
-schema: olm.channel
----
-entries:
-- name: network-observability-operator.v1.0.0-202301070345
-- name: network-observability-operator.v1.1.0-202302110050
-  replaces: network-observability-operator.v1.0.0-202301070345
-- name: network-observability-operator.v1.2.0
-  replaces: network-observability-operator.v1.1.0-202302110050
-- name: network-observability-operator.v1.3.0
-  replaces: network-observability-operator.v1.2.0
 - name: network-observability-operator.v1.4.0
   replaces: network-observability-operator.v1.3.0
 - name: network-observability-operator.v1.4.1
@@ -47,6 +35,18 @@ entries:
 - name: network-observability-operator.v1.9.0
   replaces: network-observability-operator.v1.8.0
 name: stable
+package: netobserv-operator
+schema: olm.channel
+---
+entries:
+- name: network-observability-operator.v1.0.0-202301070345
+- name: network-observability-operator.v1.1.0-202302110050
+  replaces: network-observability-operator.v1.0.0-202301070345
+- name: network-observability-operator.v1.2.0
+  replaces: network-observability-operator.v1.1.0-202302110050
+- name: network-observability-operator.v1.3.0
+  replaces: network-observability-operator.v1.2.0
+name: v1.0.x
 package: netobserv-operator
 schema: olm.channel
 ---
@@ -9750,8 +9750,8 @@ properties:
       capabilities: Seamless Upgrades
       categories: Monitoring, Networking
       console.openshift.io/plugins: '["netobserv-plugin"]'
-      containerImage: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:e059192784283385687011b9fa4bb87094783d4530aa66b79168777666a6e2a0
-      createdAt: 2025-04-02T06:53:23
+      containerImage: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:7ed76a6b8f3b1ee084cd9930e91a676887016faf8bc12eb2c8933e8950a30ea1
+      createdAt: 2025-04-04T13:54:55
       description: Network flows collector and monitoring solution
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -10301,12 +10301,12 @@ properties:
 relatedImages:
 - image: quay.io/redhat-user-workloads/ocp-network-observab-tenant/network-observability-operator-bundle-ystream:latest
   name: ""
-- image: registry.redhat.io/network-observability/network-observability-console-plugin-rhel9@sha256:3d36a56f4745f57f8f5a79b23d16bf14fc3172ff58c2359ac5cbd540996793d5
+- image: registry.redhat.io/network-observability/network-observability-console-plugin-rhel9@sha256:da671dba20164df9e5c455083cb73a441fe436c6ce467fc8dfe9c6de23330f8d
   name: console-plugin
-- image: registry.redhat.io/network-observability/network-observability-ebpf-agent-rhel9@sha256:96b3765ea74f74f2a4043767dc9e1ff0bf6b47ced011999fe91e27529bce6133
+- image: registry.redhat.io/network-observability/network-observability-ebpf-agent-rhel9@sha256:14efdf33eac9c5e43199db50ba1c8593388661cd06018f87adc90e7220843729
   name: ebpf-agent
-- image: registry.redhat.io/network-observability/network-observability-flowlogs-pipeline-rhel9@sha256:c6c194d9f631f0b5233b1edfc52381d55fa0d64a84d9d354ec85e774be4f0ef6
+- image: registry.redhat.io/network-observability/network-observability-flowlogs-pipeline-rhel9@sha256:4026b6819ffba8077fe08810f9d8a53ba102ef6a5019d4875fde18f4e65d9a20
   name: flowlogs-pipeline
-- image: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:e059192784283385687011b9fa4bb87094783d4530aa66b79168777666a6e2a0
+- image: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:7ed76a6b8f3b1ee084cd9930e91a676887016faf8bc12eb2c8933e8950a30ea1
   name: ""
 schema: olm.bundle
