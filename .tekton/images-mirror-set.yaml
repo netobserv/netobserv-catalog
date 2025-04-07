@@ -23,3 +23,4 @@ spec:
     - mirrors:
       - quay.io/redhat-user-workloads/ocp-network-observab-tenant/netobserv-operator/network-observability-operator-bundle
       source: registry.redhat.io/network-observability/network-observability-operator-bundle
+---
