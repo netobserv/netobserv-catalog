@@ -35,7 +35,7 @@ spec:
   - name: opm-image
     value: brew.registry.redhat.io/rh-osbs/openshift-ose-operator-registry-rhel9:v4.16
   - name: index-file
-    value: "./auto-generated/catalog/released.yaml"
+    value: "./auto-generated/legacy-catalog/released.yaml"
   pipelineRef:
     name: build-fbc-pipeline
   workspaces:
