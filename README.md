@@ -12,7 +12,17 @@ To build the catalog with released version:
 podman build -t catalog .
 ```
 
+To use upstream opm:
+```bash
+podman build -t catalog -f upstream.Dockerfile .
+```
+
 To use a different generated catalog:
 ```bash
-podman build --build-arg --build-arg INDEX_FILE=./auto-generated/<catalog-file>.yaml  -t catalog .
+podman build --build-arg INDEX_FILE=./auto-generated/<catalog-file>.yaml  -t catalog .
+```
+
+One-step, build and test on a cluster:
+```bash
+make build-image push-image deploy
 ```
