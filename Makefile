@@ -1,5 +1,10 @@
+
+.PHONY: prereqs
+prereqs:
+	go install github.com/operator-framework/operator-registry/cmd/opm@v1.51.0
+
 .PHONY: generate
-generate:
+generate: prereqs
 	rm -f ./auto-generated/catalog/*
 	rm -f ./auto-generated/legacy-catalog/*
 	for i in $(shell ls ./templates/); do \
