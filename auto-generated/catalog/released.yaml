@@ -10295,14 +10295,14 @@ properties:
       name: Red Hat
       url: https://www.redhat.com
 relatedImages:
-- image: registry.redhat.io/network-observability/network-observability-operator-bundle@sha256:abf372f07ca49997f9298c73820542f001327680452f87f7d594e532f794dd23
-  name: ""
 - image: registry.redhat.io/network-observability/network-observability-console-plugin-rhel9@sha256:7c6517ee6d3a8a66e15e153bd92d2f583876a4fa4651ec5dbda2c79e6e5f4d3e
   name: console-plugin
 - image: registry.redhat.io/network-observability/network-observability-ebpf-agent-rhel9@sha256:74b0c19221a56c369b04a93b451fc6a47d31c432193de6944dc905b1d317629b
   name: ebpf-agent
 - image: registry.redhat.io/network-observability/network-observability-flowlogs-pipeline-rhel9@sha256:fecdb31544f6a37e04d80d2457b0c2cbd8344f7c875f935a81a979f5537bfca9
   name: flowlogs-pipeline
+- image: registry.redhat.io/network-observability/network-observability-operator-bundle@sha256:abf372f07ca49997f9298c73820542f001327680452f87f7d594e532f794dd23
+  name: ""
 - image: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:a319d771cf89e8ebf84977aaee88d5f10bdf4876b353fdd8731574e62363503c
   name: ""
 schema: olm.bundle
