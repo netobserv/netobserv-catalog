@@ -11,7 +11,7 @@ metadata:
       == "main" &&
       (".tekton/***".pathChanged() ||
       "Dockerfile".pathChanged() ||
-      "./auto-generated/catalog/released.yaml".pathChanged())
+      "./auto-generated/catalog/y-stream.yaml".pathChanged())
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: catalog-ystream
@@ -27,12 +27,14 @@ spec:
     value: '{{revision}}'
   - name: output-image
     value: quay.io/redhat-user-workloads/ocp-network-observab-tenant/catalog-ystream:latest
+  - name: build-args-file
+    value: templates/y-stream.Dockerfile-args
   - name: dockerfile
     value: Dockerfile
   - name: opm-image
     value: brew.registry.redhat.io/rh-osbs/openshift-ose-operator-registry-rhel9:v4.18
   - name: index-file
-    value: "./auto-generated/catalog/released.yaml"
+    value: "./auto-generated/catalog/y-stream.yaml"
   pipelineRef:
     name: build-fbc-pipeline
   workspaces:

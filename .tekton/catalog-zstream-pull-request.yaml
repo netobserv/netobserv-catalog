@@ -12,7 +12,7 @@ metadata:
       == "main" &&
       (".tekton/***".pathChanged() ||
       "Dockerfile".pathChanged() ||
-      "./auto-generated/catalog/released.yaml".pathChanged())
+      "./auto-generated/catalog/z-stream.yaml".pathChanged())
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: catalog-zstream
@@ -28,6 +28,8 @@ spec:
     value: '{{revision}}'
   - name: output-image
     value: quay.io/redhat-user-workloads/ocp-network-observab-tenant/catalog-zstream:on-pr-{{revision}}
+  - name: build-args-file
+    value: templates/z-stream.Dockerfile-args
   - name: image-expires-after
     value: 5d
   - name: dockerfile
@@ -35,7 +37,7 @@ spec:
   - name: opm-image
     value: brew.registry.redhat.io/rh-osbs/openshift-ose-operator-registry-rhel9:v4.18
   - name: index-file
-    value: "./auto-generated/catalog/released.yaml"
+    value: "./auto-generated/catalog/z-stream.yaml"
   pipelineRef:
     name: build-fbc-pipeline
   workspaces:
