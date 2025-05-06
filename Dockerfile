@@ -2,6 +2,7 @@ ARG OPM_IMAGE=brew.registry.redhat.io/rh-osbs/openshift-ose-operator-registry-rh
 FROM $OPM_IMAGE
 
 ARG COMMIT
+ARG BUILDVERSION="1.9.0"
 ARG INDEX_FILE=./auto-generated/catalog/released.yaml
 #This files will be copied twice but it is not possible to COPY if not empty
 COPY $INDEX_FILE /configs/netobserv-operator/index.yaml
@@ -27,4 +28,4 @@ LABEL io.openshift.tags="network-observability-operator-catalog"
 LABEL upstream-vcs-ref="$COMMIT"
 LABEL upstream-vcs-type="git"
 LABEL description="Network Observability operator for OpenShift."
-LABEL version="1.8.1"
+LABEL version="$BUILDVERSION"
