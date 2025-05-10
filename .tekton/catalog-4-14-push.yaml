@@ -8,10 +8,7 @@ metadata:
     pipelinesascode.tekton.dev/cancel-in-progress: "false"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "main" &&
-      (".tekton/***".pathChanged() ||
-      "Dockerfile".pathChanged() ||
-      "./auto-generated/legacy-catalog/released.yaml".pathChanged())
+      == "main" && (".tekton/***".pathChanged() || "Dockerfile".pathChanged() || "./auto-generated/legacy-catalog/released.yaml".pathChanged())
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: catalog-4-14
@@ -32,9 +29,11 @@ spec:
   - name: opm-image
     value: registry.redhat.io/openshift4/ose-operator-registry:v4.14
   - name: index-file
-    value: "./auto-generated/legacy-catalog/released.yaml"
+    value: ./auto-generated/legacy-catalog/released.yaml
   pipelineRef:
     name: build-fbc-pipeline
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-catalog-4-14
   workspaces:
   - name: workspace
     volumeClaimTemplate:
