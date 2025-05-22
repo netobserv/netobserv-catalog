@@ -10768,7 +10768,7 @@ properties:
       categories: Monitoring, Networking
       console.openshift.io/plugins: '["netobserv-plugin"]'
       containerImage: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:36a5e445c3834a98c7ab01e84358f65c549060bd969c6dc8caa53e6cd1426419
-      createdAt: 2025-04-22T12:41:53
+      createdAt: 2025-04-26T08:46:03
       description: Network flows collector and monitoring solution
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -11314,7 +11314,7 @@ properties:
 relatedImages:
 - image: registry.redhat.io/network-observability/network-observability-operator-bundle:latest
   name: ""
-- image: registry.redhat.io/network-observability/network-observability-console-plugin-rhel9@sha256:7c6517ee6d3a8a66e15e153bd92d2f583876a4fa4651ec5dbda2c79e6e5f4d3e
+- image: registry.redhat.io/network-observability/network-observability-console-plugin-rhel9@sha256:06a13a6af7058b93ecaa6833af515a191f9195d4d810b5a04db60f76aabfe571
   name: console-plugin
 - image: registry.redhat.io/network-observability/network-observability-ebpf-agent-rhel9@sha256:74b0c19221a56c369b04a93b451fc6a47d31c432193de6944dc905b1d317629b
   name: ebpf-agent
