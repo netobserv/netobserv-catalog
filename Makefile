@@ -13,7 +13,7 @@ prereqs:
 generate: prereqs
 	rm -f ./auto-generated/catalog/*
 	rm -f ./auto-generated/legacy-catalog/*
-	for i in $(shell ls ./templates/); do \
+	for i in $(shell ls ./templates/ | grep yaml); do \
 		opm alpha render-template basic --migrate-level=bundle-object-to-csv-metadata  -o yaml ./templates/$$i > ./auto-generated/catalog/$$i; \
 		opm alpha render-template basic -o yaml ./templates/$$i > ./auto-generated/legacy-catalog/$$i; \
 		sed -i -e 's#quay.io/redhat-user-workloads/ocp-network-observab-tenant/network-observability-operator-bundle-zstream#registry.redhat.io/network-observability/network-observability-operator-bundle#g' ./auto-generated/catalog/$$i; \
