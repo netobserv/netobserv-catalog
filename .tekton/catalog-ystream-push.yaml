@@ -32,6 +32,8 @@ spec:
     value: brew.registry.redhat.io/rh-osbs/openshift-ose-operator-registry-rhel9:v4.18
   - name: index-file
     value: ./auto-generated/catalog/y-stream.yaml
+  - name: build-platforms
+    value: ["linux/x86_64", "linux/arm64", "linux/ppc64le", "linux/s390x"]
   pipelineRef:
     name: build-fbc-pipeline
   taskRunTemplate:
