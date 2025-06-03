@@ -9,7 +9,7 @@ metadata:
     pipelinesascode.tekton.dev/cancel-in-progress: "true"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main" && (".tekton/***".pathChanged() || "Dockerfile".pathChanged() || "./auto-generated/legacy-catalog/released.yaml".pathChanged())
+      == "main" && (".tekton/***".pathChanged() || "Dockerfile".pathChanged() || "./templates/next-release.Dockerfile-args".pathChanged() || "./auto-generated/legacy-catalog/released.yaml".pathChanged())
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: catalog-4-14
