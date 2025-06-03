@@ -25,6 +25,8 @@ spec:
     value: '{{revision}}'
   - name: output-image
     value: quay.io/redhat-user-workloads/ocp-network-observab-tenant/catalog-4-20:on-pr-{{revision}}
+  - name: build-args-file
+    value: templates/next-release.Dockerfile-args
   - name: image-expires-after
     value: 5d
   - name: dockerfile

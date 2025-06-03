@@ -24,6 +24,8 @@ spec:
     value: '{{revision}}'
   - name: output-image
     value: quay.io/redhat-user-workloads/ocp-network-observab-tenant/catalog-4-12:latest
+  - name: build-args-file
+    value: templates/next-release.Dockerfile-args
   - name: dockerfile
     value: Dockerfile
   - name: opm-image
