@@ -79,7 +79,7 @@ properties:
             "spec": {
               "agent": {
                 "ebpf": {
-                  "cacheActiveTimeout": "5s",
+                  "cacheActiveTimeout": "6s",
                   "cacheMaxFlows": 100000,
                   "excludeInterfaces": [
                     "lo"
