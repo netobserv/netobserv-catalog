@@ -903,7 +903,7 @@ relatedImages:
   name: ""
 schema: olm.bundle
 ---
-image: quay.io/redhat-user-workloads/ocp-network-observab-tenant/network-observability-operator-bundle-ystream:latest
+image: registry.redhat.io/network-observability/network-observability-operator-bundle:latest
 name: network-observability-operator.v1.9.0
 package: netobserv-operator
 properties:
@@ -978,7 +978,7 @@ properties:
   value:
     data: eyJhcGlWZXJzaW9uIjoidjEiLCJraW5kIjoiU2VydmljZSIsIm1ldGFkYXRhIjp7ImFubm90YXRpb25zIjp7InNlcnZpY2UuYmV0YS5vcGVuc2hpZnQuaW8vc2VydmluZy1jZXJ0LXNlY3JldC1uYW1lIjoid2ViaG9vay1zZXJ2ZXItY2VydCJ9LCJjcmVhdGlvblRpbWVzdGFtcCI6bnVsbCwibGFiZWxzIjp7ImFwcC5rdWJlcm5ldGVzLmlvL2NvbXBvbmVudCI6IndlYmhvb2siLCJhcHAua3ViZXJuZXRlcy5pby9jcmVhdGVkLWJ5IjoibmV0b2JzZXJ2LW9wZXJhdG9yIiwiYXBwLmt1YmVybmV0ZXMuaW8vaW5zdGFuY2UiOiJ3ZWJob29rLXNlcnZpY2UiLCJhcHAua3ViZXJuZXRlcy5pby9tYW5hZ2VkLWJ5Ijoia3VzdG9taXplIiwiYXBwLmt1YmVybmV0ZXMuaW8vbmFtZSI6InNlcnZpY2UiLCJhcHAua3ViZXJuZXRlcy5pby9wYXJ0LW9mIjoibmV0b2JzZXJ2LW9wZXJhdG9yIn0sIm5hbWUiOiJuZXRvYnNlcnYtd2ViaG9vay1zZXJ2aWNlIn0sInNwZWMiOnsicG9ydHMiOlt7InBvcnQiOjQ0MywicHJvdG9jb2wiOiJUQ1AiLCJ0YXJnZXRQb3J0Ijo5NDQzfV0sInNlbGVjdG9yIjp7ImNvbnRyb2wtcGxhbmUiOiJjb250cm9sbGVyLW1hbmFnZXIifX0sInN0YXR1cyI6eyJsb2FkQmFsYW5jZXIiOnt9fX0=
 relatedImages:
-- image: quay.io/redhat-user-workloads/ocp-network-observab-tenant/network-observability-operator-bundle-ystream:latest
+- image: registry.redhat.io/network-observability/network-observability-operator-bundle:latest
   name: ""
 - image: registry.redhat.io/network-observability/network-observability-console-plugin-compat-rhel9@sha256:abaff721b5730cedac497a767d80882134ba5ee94c8b5a1813e05c25a1410e91
   name: console-plugin-compat
