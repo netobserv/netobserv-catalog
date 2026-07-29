@@ -6165,7 +6165,7 @@ relatedImages:
   name: demo-loki
 schema: olm.bundle
 ---
-image: quay.io/redhat-user-workloads/ocp-netobserv-private-tenant/noo-bundle-private-zstream@sha256:dc99a36b59751c64cc610aa778751d2966436531875762a9e30680395d86f71e
+image: quay.io/redhat-user-workloads/ocp-netobserv-private-tenant/noo-bundle-private-zstream@sha256:fb3df39fea6a510b903080ad594f595d5ffad5d6208c29727d008dbaa2d2227d
 name: network-observability-operator.v1.12.2
 package: netobserv-operator
 properties:
@@ -6280,7 +6280,7 @@ properties:
       categories: Monitoring, Networking, Observability, OpenShift Optional
       console.openshift.io/plugins: '["netobserv-plugin"]'
       containerImage: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:0f1aeee8a9a761b171b3defbef8a359b01541b2493d7bf7d1d967214ad2a6e1e
-      createdAt: 2026-07-29T11:57:31
+      createdAt: 2026-07-29T15:37:34
       description: Network flows collector and monitoring solution
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -6926,7 +6926,7 @@ properties:
       name: Red Hat
       url: https://www.redhat.com
 relatedImages:
-- image: quay.io/redhat-user-workloads/ocp-netobserv-private-tenant/noo-bundle-private-zstream@sha256:dc99a36b59751c64cc610aa778751d2966436531875762a9e30680395d86f71e
+- image: quay.io/redhat-user-workloads/ocp-netobserv-private-tenant/noo-bundle-private-zstream@sha256:fb3df39fea6a510b903080ad594f595d5ffad5d6208c29727d008dbaa2d2227d
   name: ""
 - image: registry.redhat.io/network-observability/network-observability-console-plugin-pf4-rhel9@sha256:23d04f6d051e2c30b8f363dcb8965ff21996ca38be795fd5af574859234a2b27
   name: console-plugin-pf4
