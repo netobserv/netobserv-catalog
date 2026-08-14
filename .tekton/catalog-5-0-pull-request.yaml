@@ -32,7 +32,7 @@ spec:
   - name: dockerfile
     value: Dockerfile
   - name: opm-image
-    value: registry.redhat.io/openshift4/ose-operator-registry-rhel9:v5.0
+    value: registry.redhat.io/openshift5/ose-operator-registry-rhel9:v5.0
   - name: index-file
     value: ./auto-generated/catalog/released.yaml
   pipelineRef:
