@@ -1,0 +1,36 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Release
+metadata:
+  name: release-netobserv-1-12-2-1
+  namespace: ocp-network-observab-tenant
+  labels:
+    release.appstudio.openshift.io/author: 'jtakvori'
+spec:
+  releasePlan: netobserv-zstream
+  snapshot: netobserv-zstream-20260814-094135-000
+  data:
+    releaseNotes:
+      type: RHSA
+      cves:
+        - key: CVE-2026-59869
+          component: network-observability-console-plugin # <-- WARNING don't do that next time, include the -zstream (or -ystream) suffix! else it's silently ignored
+        - key: CVE-2026-59869
+          component: network-observability-console-plugin-pf5
+        - key: CVE-2026-13676
+          component: network-observability-console-plugin
+        - key: CVE-2026-13676
+          component: network-observability-console-plugin-pf5
+        - key: CVE-2026-42504
+          component: network-observability-cli
+        - key: CVE-2026-27145
+          component: network-observability-cli
+        - key: CVE-2026-39821
+          component: network-observability-cli
+        - key: CVE-2026-33811
+          component: network-observability-cli
+        - key: CVE-2026-12143
+          component: network-observability-console-plugin
+        - key: CVE-2026-12143
+          component: network-observability-console-plugin-pf4
+        - key: CVE-2026-12143
+          component: network-observability-console-plugin-pf5

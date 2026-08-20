@@ -143,8 +143,15 @@ When a release candidate is accepted and ready to be released, the catalogs repo
 BUNDLE_SHA=(desired bundle SHA) make final-ystream # (or zstream)
 ```
 
-Once it is ready to be released, new `Release` objects need to be created to trigger the production release pipeline. Copy/paste [the last release directory](https://github.com/netobserv/netobserv-catalog/tree/main/releases) for the new version, and edit `netobserv.yaml` and `fbc.yaml` with:
+Once it is ready to be released, new `Release` objects need to be created to trigger the production release pipeline. A script helps you generate those files. Make sure you're connected to the Konflux cluster, then run:
 
+```bash
+./releases/generate.sh -a YOUR_KONFLUX_USERNAME -s -o
+```
+
+Alternatively, manual steps are:
+
+- Copy/paste [the last release directory](https://github.com/netobserv/netobserv-catalog/tree/main/releases) for the new version, and edit `netobserv.yaml` and `fbc.yaml` with:
 - updated `name`, e.g. `release-netobserv-1-12-0-0`; last digit is the attempt number, in case you need to retry
 - your konflux / redhat user under `release.appstudio.openshift.io/author` label
 - the snapshot to release under `snapshot` - check in konflux dashboard what's the latest snapshot that was generated after the last successful bundle build (or FBC)
