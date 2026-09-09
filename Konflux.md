@@ -102,6 +102,12 @@ spec:
   sourceType: grpc
 ```
 
+If you want to test the upgrade, install the current release from OperatorHub, then patch the Subscription to point to this source:
+
+```bash
+kubectl patch subscription netobserv-operator -n openshift-netobserv-operator --type='merge' -p '{"spec":{"source":"netobserv-konflux"}}'
+```
+
 ## Release checklist
 
 Refer to the [release checklist](https://docs.google.com/spreadsheets/d/1hQiqEKYBZ75obA6qOmaY-L3uMAiVSIOeVbpZJIkvwiY/edit?gid=583594058#gid=583594058) as the main entry point for the process.
