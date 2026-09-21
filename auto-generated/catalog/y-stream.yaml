@@ -20841,8 +20841,8 @@ properties:
       capabilities: Seamless Upgrades
       categories: Monitoring, Networking, Observability, OpenShift Optional
       console.openshift.io/plugins: '["netobserv-plugin"]'
-      containerImage: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:b6d8f7ad55fdfc9f5fa60f62ac65dfb2c269f75411f6208e4a2ba386c1efb54e
-      createdAt: 2026-09-18T06:58:55
+      containerImage: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:d0e63ac2f972fb3d27687ab9aea5081e189a3d28174395998316eed3f95b4c6b
+      createdAt: 2026-09-21T15:11:16
       description: Network flows collector and monitoring solution
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -21141,6 +21141,8 @@ properties:
           path: exporters[0].openTelemetry
           x-descriptors:
           - urn:alm:descriptor:com.tectonic.ui:fieldDependency:exporters.type:OpenTelemetry
+        - displayName: Dns tracking ports
+          path: agent.ebpf.dnsTrackingPorts
         - displayName: Exclude interfaces
           path: agent.ebpf.excludeInterfaces
         - displayName: Features
@@ -21213,6 +21215,8 @@ properties:
           path: networkPolicy.additionalNamespaces
         - displayName: Enable
           path: networkPolicy.enable
+        - displayName: Bgp enrichment
+          path: processor.bgpEnrichment
         - displayName: Consumer replicas
           path: processor.consumerReplicas
         - displayName: Deduper
@@ -21502,17 +21506,17 @@ properties:
 relatedImages:
 - image: quay.io/redhat-user-workloads/ocp-network-observab-tenant/network-observability-operator-bundle-ystream:latest
   name: ""
-- image: registry.redhat.io/network-observability/network-observability-console-plugin-pf4-rhel9@sha256:91ab5379d232324d5bf3205a76c4e6a56a5c64f3a1127540f66e117765017fe4
+- image: registry.redhat.io/network-observability/network-observability-console-plugin-pf4-rhel9@sha256:01c8c6bb26fd09589ffa59c0f06999a51feeb421461f81928e2cf4e369287d91
   name: web-console-pf4
-- image: registry.redhat.io/network-observability/network-observability-console-plugin-pf5-rhel9@sha256:0106f2ac815e0f1952fc75fad5c1bd5ef719956a80f5515c1b0cf9af6f9b8e50
+- image: registry.redhat.io/network-observability/network-observability-console-plugin-pf5-rhel9@sha256:5e6fa74c3dcc0c4ef248695633833b2077b834b8204e21d25463479e62a7d930
   name: web-console-pf5
-- image: registry.redhat.io/network-observability/network-observability-console-plugin-rhel9@sha256:453ec75462b8dc6b86fbadd39889f50b9e152ea3036a4a415d28d7d6e3e4e861
+- image: registry.redhat.io/network-observability/network-observability-console-plugin-rhel9@sha256:aa63787af1d7f39e8170adadf2e2fb1cee27773747c88c9a3114c961728ab4bc
   name: web-console
-- image: registry.redhat.io/network-observability/network-observability-ebpf-agent-rhel9@sha256:49d858fa9e42eea4f810ae650d0944a924d7f5a5da68fcb34e7a35052464ad13
+- image: registry.redhat.io/network-observability/network-observability-ebpf-agent-rhel9@sha256:0645a4e33323adad90272d07b582147322af299ce22ebde34ca23f424a93a111
   name: ebpf-agent
-- image: registry.redhat.io/network-observability/network-observability-flowlogs-pipeline-rhel9@sha256:4d715cff06f0c5578cb410da7dc08e2fc6ce771498ab76020ba418277aaf295f
+- image: registry.redhat.io/network-observability/network-observability-flowlogs-pipeline-rhel9@sha256:9110348d2232dd546e8a8b8704f778af5f3927799322ff6604be9c54755c31c0
   name: flowlogs-pipeline
-- image: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:b6d8f7ad55fdfc9f5fa60f62ac65dfb2c269f75411f6208e4a2ba386c1efb54e
+- image: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:d0e63ac2f972fb3d27687ab9aea5081e189a3d28174395998316eed3f95b4c6b
   name: ""
 - image: registry.redhat.io/openshift-logging/logging-loki-rhel9@sha256:6efd6e1fbc337c39a37cd52f1963ea61a33f0f9ab1220eeb5ecdd86b0ceb598f
   name: demo-loki
