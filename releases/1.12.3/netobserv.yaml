@@ -1,0 +1,68 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: Release
+metadata:
+  name: release-netobserv-1-12-3-1
+  namespace: ocp-network-observab-tenant
+  labels:
+    release.appstudio.openshift.io/author: 'jtakvori'
+spec:
+  releasePlan: netobserv-zstream
+  snapshot: netobserv-zstream-20260921-102236-000
+  data:
+    releaseNotes:
+      type: RHSA
+      cves:
+        - key: CVE-2026-84445
+          component: network-observability-zstream
+        - key: CVE-2026-84445
+          component: network-observability-ebpf-agent-zstream
+        - key: CVE-2026-84445
+          component: network-observability-flowlogs-pipeline-zstream
+        - key: CVE-2026-84445
+          component: network-observability-cli-zstream
+        - key: CVE-2026-84394
+          component: network-observability-console-plugin-zstream
+        - key: CVE-2026-84394
+          component: network-observability-console-plugin-pf5-zstream
+        - key: CVE-2026-84292
+          component: network-observability-console-plugin-zstream
+        - key: CVE-2026-84292
+          component: network-observability-console-plugin-pf5-zstream
+        - key: CVE-2026-84375
+          component: network-observability-console-plugin-zstream
+        - key: CVE-2026-84375
+          component: network-observability-console-plugin-pf5-zstream
+        - key: CVE-2026-76172
+          component: network-observability-console-plugin-zstream
+        - key: CVE-2026-76172
+          component: network-observability-console-plugin-pf5-zstream
+        - key: CVE-2026-75975
+          component: network-observability-console-plugin-zstream
+        - key: CVE-2026-75975
+          component: network-observability-console-plugin-pf5-zstream
+        - key: CVE-2026-75931
+          component: network-observability-console-plugin-zstream
+        - key: CVE-2026-75931
+          component: network-observability-console-plugin-pf5-zstream
+        - key: CVE-2026-75899
+          component: network-observability-console-plugin-zstream
+        - key: CVE-2026-75899
+          component: network-observability-console-plugin-pf5-zstream
+        - key: CVE-2026-67213
+          component: network-observability-console-plugin-pf5-zstream
+        - key: CVE-2026-33818
+          component: network-observability-cli-zstream
+        - key: CVE-2026-56862
+          component: network-observability-cli-zstream
+        - key: CVE-2026-56853
+          component: network-observability-cli-zstream
+        - key: CVE-2026-56859
+          component: network-observability-cli-zstream
+        - key: CVE-2026-56860
+          component: network-observability-cli-zstream
+        - key: CVE-2026-56852
+          component: network-observability-cli-zstream
+        - key: CVE-2026-65819
+          component: network-observability-cli-zstream
+        - key: CVE-2026-65819
+          component: network-observability-ebpf-agent-zstream
