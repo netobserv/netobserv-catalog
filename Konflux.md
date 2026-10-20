@@ -239,7 +239,9 @@ oc -n ocp-network-observab-tenant annotate component/network-observability-cli-z
 ### Summary of changes
 
 To summarize, after a release, we should have:
-- In all repos, for `main` (=ystream) and `release-1.n` (=zstream) branches, tekton pipelines (in `.tekton` directory) and `Dockerfile-args` files correctly set up as explained [here](https://github.com/netobserv/documents/blob/main/hack/prepare-next-version.sh#L180-L183).
+- In each downstream repos, for `release-(n+1)` (=ystream) and `release-n` (=zstream) branches:
+  - Tekton pipelines (in `.tekton` directory) are triggered on changes on that branch (e.g. `... && target_branch == "release-2.0" ...`), and refer to the correct application/component/docker image (either zstream or ystream)
+  - `Dockerfile-args` file correctly points to the desired `BUILDVERSION` and `BUILDVERSION_Y`.
 - In Konflux, ystream and zstream components pointing to the expected branches.
 - In [netobserv-catalog](https://github.com/netobserv/netobserv-catalog), `templates/y-stream.yaml` is prepared for the 1.nextY, with OLM dependency set up for upgrading from the last version, and `network-observability-operator-bundle-ystream:latest` referenced as the next version.
 - In [netobserv-catalog](https://github.com/netobserv/netobserv-catalog), `templates/z-stream.yaml` is prepared for the 1.Y.nextZ, with OLM dependency set up for upgrading from the last version, and `network-observability-operator-bundle-zstream:latest` referenced as the next version.
