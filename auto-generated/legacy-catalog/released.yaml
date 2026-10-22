@@ -2275,8 +2275,6 @@ properties:
   value:
     data: eyJhcGlWZXJzaW9uIjoidjEiLCJraW5kIjoiU2VydmljZSIsIm1ldGFkYXRhIjp7ImFubm90YXRpb25zIjp7InNlcnZpY2UuYmV0YS5vcGVuc2hpZnQuaW8vc2VydmluZy1jZXJ0LXNlY3JldC1uYW1lIjoid2ViaG9vay1zZXJ2ZXItY2VydCJ9LCJjcmVhdGlvblRpbWVzdGFtcCI6bnVsbCwibGFiZWxzIjp7ImFwcC5rdWJlcm5ldGVzLmlvL3BhcnQtb2YiOiJuZXRvYnNlcnYtb3BlcmF0b3IifSwibmFtZSI6Im5ldG9ic2Vydi13ZWJob29rLXNlcnZpY2UifSwic3BlYyI6eyJwb3J0cyI6W3sicG9ydCI6NDQzLCJwcm90b2NvbCI6IlRDUCIsInRhcmdldFBvcnQiOjk0NDN9XSwic2VsZWN0b3IiOnsiY29udHJvbC1wbGFuZSI6ImNvbnRyb2xsZXItbWFuYWdlciJ9fSwic3RhdHVzIjp7ImxvYWRCYWxhbmNlciI6e319fQ==
 relatedImages:
-- image: registry.redhat.io/network-observability/network-observability-operator-bundle@sha256:2fb847179f4233f43e9e991b5be44163599f60c9e219eacb85b253a2896bc90d
-  name: ""
 - image: registry.redhat.io/network-observability/network-observability-console-plugin-pf4-rhel9@sha256:a1a8865108c03ced6e754ec1766daee678277ce59e53019917d46e6f0dbeb0f6
   name: web-console-pf4
 - image: registry.redhat.io/network-observability/network-observability-console-plugin-pf5-rhel9@sha256:e99e5cb805cea69da93f26bb08050dbe883033d463dc0a5749656776a827066a
@@ -2287,6 +2285,8 @@ relatedImages:
   name: ebpf-agent
 - image: registry.redhat.io/network-observability/network-observability-flowlogs-pipeline-rhel9@sha256:ee94ec0c1c8e5ef9747e282fd716cf6e1810960d5c1a60985d8d557199197032
   name: flowlogs-pipeline
+- image: registry.redhat.io/network-observability/network-observability-operator-bundle@sha256:2fb847179f4233f43e9e991b5be44163599f60c9e219eacb85b253a2896bc90d
+  name: ""
 - image: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:aeeb342bc445721df95c99637306ba592bfcfafca922c7b4d73bd4b98a920b9a
   name: ""
 - image: registry.redhat.io/openshift-logging/logging-loki-rhel9@sha256:6efd6e1fbc337c39a37cd52f1963ea61a33f0f9ab1220eeb5ecdd86b0ceb598f
