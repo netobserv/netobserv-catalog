@@ -283,7 +283,7 @@ fi
 apiVersion: appstudio.redhat.com/v1alpha1
 kind: Release
 metadata:
-  name: release-netobserv-${VERSION_DASHED}-1
+  name: release-netobserv-${VERSION_DASHED}-0
   namespace: ocp-network-observab-tenant
   labels:
     release.appstudio.openshift.io/author: '${AUTHOR}'
@@ -341,7 +341,7 @@ if [ "$RELEASE_TYPE" = "RHEA" ]; then
   echo "WARNING: No CVEs provided - releaseNotes.type set to RHEA."
   echo "  If this release should include CVEs, go to:"
   echo "  https://redhat.atlassian.net/issues?jql=project%20%3D%20NETOBSERV%20AND%20fixVersion%20%3D%20netobserv-${VERSION}%20AND%20type%20%3D%20Vulnerability"
-  echo "  Then click '...' > Export > CSV - my defaults, save the file, and re-run with:"
+  echo "  Then click '...' > Export > CSV - visible fields, save the file, and re-run with:"
   echo "  $0 -a $AUTHOR -c <path-to-csv>"
 fi
 
