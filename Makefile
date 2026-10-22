@@ -36,16 +36,20 @@ prereqs: ## Prerequisites: installs opm and yq
 
 ##@ Updating the catalogs
 
+MIGRATE := --migrate-level=bundle-object-to-csv-metadata
+# Where render.sh reads the already-rendered bundle blobs from; /dev/null renders them all again
+CACHE ?=
+
 .PHONY: generate
-generate: prereqs ## Regenerate all catalogs from scratch
+generate: prereqs ## Regenerate all catalogs, reusing the bundles already rendered by digest
 	@for i in $(shell ls ./templates/ | grep yaml); do \
 		if [[ "$(SKIP)" == *"$$i"* ]]; then \
 		  echo "Skipping $$i" ; \
 		else \
 			echo "Generating $$i..." ; \
-			opm alpha render-template basic --migrate-level=bundle-object-to-csv-metadata  -o yaml ./templates/$$i > ./auto-generated/catalog/$$i || exit 1; \
+			CACHE=$(CACHE) ./render.sh ./templates/$$i ./auto-generated/catalog/$$i $(MIGRATE) || exit 1; \
 			echo "Generating legacy $$i..." ; \
-			opm alpha render-template basic -o yaml ./templates/$$i > ./auto-generated/legacy-catalog/$$i || exit 1; \
+			CACHE=$(CACHE) ./render.sh ./templates/$$i ./auto-generated/legacy-catalog/$$i || exit 1; \
 			if [[ "$$i" == "released.yaml" ]]; then \
 				echo "Sedding $$i" ; \
 				$(SED_INPLACE) -e 's#quay.io/redhat-user-workloads/ocp-network-observab-tenant/network-observability-operator-bundle-zstream#registry.redhat.io/network-observability/network-observability-operator-bundle#g' ./auto-generated/catalog/released.yaml ; \
@@ -55,6 +59,10 @@ generate: prereqs ## Regenerate all catalogs from scratch
 			fi \
 		fi \
 	done
+
+.PHONY: regenerate
+regenerate: CACHE=/dev/null
+regenerate: generate ## Regenerate all catalogs from scratch, re-rendering every bundle
 
 .PHONY: gen-ystream
 gen-ystream: SKIP=released.yaml,z-stream.yaml
@@ -93,6 +101,18 @@ prepare-next: ## Prepare the next y-stream and z-stream versions, after a releas
 	./prepare-next.sh $(NEXT_Y)
 
 ##@ Testing
+
+.PHONY: check-render
+check-render: ## Check that reusing rendered bundles reproduces the released catalogs (offline)
+	@status=0 ; \
+	for d in catalog legacy-catalog; do \
+		out=$$(mktemp) ; \
+		[ "$$d" = catalog ] && flags="$(MIGRATE)" || flags="" ; \
+		CACHE=./auto-generated/$$d/released.yaml ./render.sh ./templates/released.yaml $$out $$flags ; \
+		diff ./auto-generated/$$d/released.yaml $$out && echo "$$d/released.yaml: OK" || status=1 ; \
+		rm -f $$out ; \
+	done ; \
+	exit $$status
 
 .PHONY: build-image
 build-image: ## Build the catalog image
