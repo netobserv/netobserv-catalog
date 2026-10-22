@@ -33,7 +33,17 @@ make gen-ystream
 make gen-zstream
 ```
 
-Then commit and push the changes to the `main` branch. It will trigger Konflux jobs that build and push catalogs to quay (`catalog-ystream:latest` or `catalog-zstream:latest`). See [Konflux - Deploying](./Konflux.md#deploying) for how to consume them.
+Generation is incremental, only the current bundle is fetched and rendered through `opm`, then added/merged on top of the existing.
+
+It is still possible to regenerate the full graph with:
+
+```bash
+make regenerate
+```
+
+This also works per stream, e.g. `make gen-ystream CACHE=/dev/null`.
+
+After generating the FBC, commit and push the changes to the `main` branch. It will trigger Konflux jobs that build and push catalogs to quay (`catalog-ystream:latest` or `catalog-zstream:latest`). See [Konflux - Deploying](./Konflux.md#deploying) for how to consume them.
 
 See also:
 
