@@ -22419,8 +22419,8 @@ properties:
       capabilities: Seamless Upgrades
       categories: Monitoring, Networking, Observability, OpenShift Optional
       console.openshift.io/plugins: '["netobserv-plugin"]'
-      containerImage: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:d91da9938e6cea2dc7759b6d4ea62d81de2e85ac82532e5370286dd468726807
-      createdAt: 2026-11-10T08:12:45
+      containerImage: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:e47055cb5a25967d69b69572e191ebb85b1cad21e21402d6bb256518cee28839
+      createdAt: 2026-11-24T06:46:56
       description: Network flows collector and monitoring solution
       features.operators.openshift.io/cnf: "false"
       features.operators.openshift.io/cni: "false"
@@ -22436,6 +22436,7 @@ properties:
       operatorframework.io/initialization-resource: '{"apiVersion":"flows.netobserv.io/v1beta2",
         "kind":"FlowCollector","metadata":{"name":"cluster"},"spec": {}}'
       operatorframework.io/suggested-namespace: openshift-netobserv-operator
+      operatorframework.io/suggested-namespace-template: '{"apiVersion":"v1","kind":"Namespace","metadata":{"name":"openshift-netobserv-operator","annotations":{"workload.openshift.io/allowed":"management"}}}'
       operators.openshift.io/valid-subscription: '["OpenShift Kubernetes Engine",
         "OpenShift Container Platform", "OpenShift Platform Plus"]'
       operators.operatorframework.io/builder: operator-sdk-v1.42.0
@@ -23030,6 +23031,10 @@ properties:
       | Kafka partitions<br>*In your Kafka installation*                                  | N/A                    | 48                  | 48                   |
       | Kafka brokers<br>*In your Kafka installation*                                     | N/A                    | 3 (default)         | 3 (default)          |
 
+      ## CLI
+
+      A companion CLI is available alongside the web console, and does not require to install this operator. It offers similar capabilities for on-demand capture, including full packets capture. See the [OpenShift CLI documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/network_observability/network-observability-cli).
+
       ## Further reading
 
       Please refer to the documentation on GitHub for more information.
@@ -23086,15 +23091,15 @@ relatedImages:
   name: ""
 - image: registry.redhat.io/network-observability/network-observability-console-plugin-pf4-rhel9@sha256:5af133597607b23ea5f3f82fdeef38cb6714347e07635483c9e9b944b1a22fec
   name: web-console-pf4
-- image: registry.redhat.io/network-observability/network-observability-console-plugin-pf5-rhel9@sha256:0686cc5f379eaa5e21d15c004328d9f0a02020d51b92a9b940428d7c50120680
+- image: registry.redhat.io/network-observability/network-observability-console-plugin-pf5-rhel9@sha256:f1b871a3b88dc02b56dc33e9303ac350b1b15d0647fb3b12115a836e9024c8ca
   name: web-console-pf5
-- image: registry.redhat.io/network-observability/network-observability-console-plugin-rhel9@sha256:edbf50171aeb116cedc5028efe2bd5c57b47b0ae233df05af9946493af66dacc
+- image: registry.redhat.io/network-observability/network-observability-console-plugin-rhel9@sha256:7109dbb0c51e4f88ab0c7491b9acbfdf140c08e23e090593831f8ba98e5b4b80
   name: web-console
-- image: registry.redhat.io/network-observability/network-observability-ebpf-agent-rhel9@sha256:9e926ccdc1779e1f9bb132bbead96258ae232105b70058815d8a12ac5b74d91d
+- image: registry.redhat.io/network-observability/network-observability-ebpf-agent-rhel9@sha256:01f509b5e8f0fd4d665eaf5baf1680cb5a0b3f909734730c79818cdde0c63523
   name: ebpf-agent
-- image: registry.redhat.io/network-observability/network-observability-flowlogs-pipeline-rhel9@sha256:34611fe1262b6a1d05bd3794d46462972a87f6d3b53575c591fcddd6b4da6d04
+- image: registry.redhat.io/network-observability/network-observability-flowlogs-pipeline-rhel9@sha256:7a6fa6acd280680e81cf91f2b65a9e5222454eb208309fd5294a671a0d72c5bf
   name: flowlogs-pipeline
-- image: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:d91da9938e6cea2dc7759b6d4ea62d81de2e85ac82532e5370286dd468726807
+- image: registry.redhat.io/network-observability/network-observability-rhel9-operator@sha256:e47055cb5a25967d69b69572e191ebb85b1cad21e21402d6bb256518cee28839
   name: ""
 - image: registry.redhat.io/openshift-logging/logging-loki-rhel9@sha256:6efd6e1fbc337c39a37cd52f1963ea61a33f0f9ab1220eeb5ecdd86b0ceb598f
   name: demo-loki
