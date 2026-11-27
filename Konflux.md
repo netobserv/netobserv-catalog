@@ -40,6 +40,10 @@ Konflux will regulary create new pull requests, there are three categories :
 - [Konflux tasks update](https://github.com/netobserv/netobserv-operator/pull/787) Up to date tasks are required to pass security check during release. Also the migration note sometimes contains instruction to some required actions
 - [Dependencies update](https://github.com/netobserv/netobserv-operator/pull/962) Kondlux internally use [https://github.com/renovatebot/renovate](renovate) to automatically create this PR.
 
+### Snyk
+
+The snyk task pushes snapshots for SAST. Dashboard is available at https://app.snyk.io/org/hybrid-platforms-observability to maintainers.
+
 ## Deploying
 
 An `ImageDigestMirrorSet` is required:
